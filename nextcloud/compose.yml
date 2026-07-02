@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mariadb:lts
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    networks:
+      - nextcloud-internal
+
+  redis:
+    image: redis:alpine
+    restart: always
+    networks:
+      - nextcloud-internal
+
+  app:
+    image: nextcloud
+    restart: always
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+    networks:
+      - nextcloud-internal
+      - proxy-network  # <--- Tells Nextcloud to talk on the proxy network
+
+volumes:
+  nextcloud:
+  db:
+
+networks:
+  nextcloud-internal:  # Keeps your DB and Redis safe and private
+  proxy-network:
+    external: true     # Tells Compose to look for your pre-existing network
