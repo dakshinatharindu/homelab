@@ -1,0 +1,20 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./icons:/app/public/icons
+      - ./images:/app/public/images
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=dt.linkpc.net,www.dt.linkpc.net
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true

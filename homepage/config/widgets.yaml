@@ -1,0 +1,52 @@
+- logo:
+    icon: /icons/favicon-large.png
+
+- greeting:
+    text_size: 4xl
+    text: Homepage
+
+- resources:
+    expanded: false
+    cpu: true 
+    memory: true  
+    refresh: 1000
+
+- resources: 
+    disk:
+     - /
+
+- resources: 
+    expanded: false
+    uptime: true 
+    refresh: 1000
+
+- datetime:
+    text_size: 4xl
+    format:
+        timeStyle: short
+        hour12: false
+
+- greeting:
+    text: "                              "
+
+- datetime:
+    text_size: md
+    format:
+        dateStyle: long
+        hour12: false
+
+# - search:
+#     provider: google 
+#     focus: true
+#     showSearchSuggestions: true
+#     target: _parent
+
+# - openmeteo:
+#     label: Location
+#     latitude: 0.00
+#     longitude: 0.00
+#     timezone: UTC/Etc
+#     units: metric
+#     cache: 5
+#     format:
+#       maximumFractionDigits: 0

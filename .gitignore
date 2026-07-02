@@ -1,0 +1,6 @@
+jellyfin/cache/
+jellyfin/config/
+nginx-proxy-manager/proxy/
+homepage/config/logs/homepage.log
+.env
+!.env.example
