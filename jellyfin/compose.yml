@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      # Maps your host media directories character-for-character into the container
+      - ~/media/movies:/data/movies
+      - ~/media/tvshows:/data/tvshows
+    environment:
+      - JELLYFIN_PublishedServerUrl=https://stream.dt.linkpc.net
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
