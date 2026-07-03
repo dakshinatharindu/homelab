@@ -1,0 +1,13 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    container_name: stirling-pdf
+    restart: unless-stopped
+    volumes:
+      - ./configs:/configs
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true

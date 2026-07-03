@@ -10,6 +10,12 @@
             url: https://nextcloud.dt.linkpc.net
             key: "{{HOMEPAGE_VAR_NEXTCLOUD_KEY}}"
             fields: ["freespace", "activeusers", "numfiles"]
+    
+    - StirlingPDF:
+        icon: /icons/stirling-pdf.png
+        href: https://pdf.dt.linkpc.net
+        container: stirling-pdf
+        description: PDF management and conversion
 
     # - Immich:
     #     icon: immich.png
@@ -23,6 +29,22 @@
     #         version: 2
     #         fields: ["photos", "videos", "storage"]
 
+    
+
+    # - Mealie:
+    #     icon: mealie.png
+    #     href: https://chef.example.com
+    #     container: mealie
+    #     description: Recipe management platform
+    #     widget:
+    #         type: mealie
+    #         url: https://chef.example.com
+    #         key: [REDACTED-JWT]
+    #         version: 2
+    #         fields: ["recipes", "users"]
+
+########################################################################################################################################################################################################
+- Media Processing:
     - Jellyfin:
         icon: jellyfin.png
         href: https://stream.dt.linkpc.net
@@ -38,21 +60,7 @@
             showEpisodeNumber: true 
             expandOneStreamToTwoRows: false
             fields: ["movies", "series", "songs"]
-
-    # - Mealie:
-    #     icon: mealie.png
-    #     href: https://chef.example.com
-    #     container: mealie
-    #     description: Recipe management platform
-    #     widget:
-    #         type: mealie
-    #         url: https://chef.example.com
-    #         key: [REDACTED-JWT]
-    #         version: 2
-    #         fields: ["recipes", "users"]
-
-########################################################################################################################################################################################################
-# - Media Processing:
+    
     # - Jellyseerr:
     #     icon: jellyseerr.png
     #     href: https://jellyseerr.example.com

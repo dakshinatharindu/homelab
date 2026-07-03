@@ -22,10 +22,10 @@ layout:
       style: column
       tab: HOME
       icon: mdi-file-multiple
-#   Media Processing:
-#       style: column
-#       tab: HOME
-#       icon: mdi-multimedia
+  Media Processing:
+      style: column
+      tab: HOME
+      icon: mdi-multimedia
 #   Media Management:
 #       style: column
 #       tab: HOME
