@@ -4,3 +4,4 @@ nginx-proxy-manager/proxy/
 homepage/config/logs/homepage.log
 .env
 !.env.example
+stirling-pdf/configs/
