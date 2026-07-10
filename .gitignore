@@ -5,3 +5,5 @@ homepage/config/logs/homepage.log
 .env
 !.env.example
 stirling-pdf/configs/
+snapotter/snapotter-data/
+portainer/data/
