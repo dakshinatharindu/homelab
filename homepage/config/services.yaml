@@ -16,6 +16,12 @@
         href: https://pdf.dt.linkpc.net
         container: stirling-pdf
         description: PDF management and conversion
+    
+    - SnapOtter:
+        icon: /icons/snapotter.png
+        href: https://image.dt.linkpc.net
+        container: snapotter
+        description: Image management and conversion
 
     # - Immich:
     #     icon: immich.png
@@ -161,6 +167,18 @@
             url: http://nginx-proxy-manager-proxy-1:81
             username: "{{HOMEPAGE_VAR_NPM_USERNAME}}"
             password: "{{HOMEPAGE_VAR_NPM_PASSWORD}}"
+    
+    - Portainer:
+        icon: portainer.png
+        href: https://portainer.dt.linkpc.net
+        container: portainer
+        description: Docker containers monitor
+        widget:
+            type: portainer
+            url: https://portainer.dt.linkpc.net
+            env: 3
+            key: "ptr_Iw3TZS7cpTgIfLFXEd1EhqhwoJDuO5Co4+TRIspDGaI="
+            fields: ["running", "stopped", "total"]
 
     # - Scrutiny:
     #     icon: /icons/services/scrutiny.png
@@ -194,17 +212,6 @@
 #             bitratePrecision: 0
 #             fields: ["download", "upload", "ping"]
 
-#     - Portainer:
-#         icon: portainer.png
-#         href: http://0.0.0.0
-#         container: portainer
-#         description: Docker containers monitor
-#         widget:
-#             type: portainer
-#             url: http://0.0.0.0
-#             env: 2
-#             key: [REDACTED-KEY]
-#             fields: ["running", "stopped"]
 ########################################################################################################################################################################################################
 # - Cloud Services:
 #     - Vaultwarden:

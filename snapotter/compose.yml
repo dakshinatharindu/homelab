@@ -1,0 +1,17 @@
+services:
+  snapotter:
+    image: snapotter/snapotter:latest
+    container_name: snapotter
+    restart: unless-stopped
+    ports:
+      - "1349:1349"
+    volumes:
+      - ./snapotter-data:/data
+    environment:
+      - TZ=America/New_York # Set your local timezone
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
